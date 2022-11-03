@@ -10,7 +10,7 @@
 ---
 
 <p align="center">
-  <img alt="imagem do Projeto" src="../public/github.png" width="100%">
+  <img alt="imagem do Projeto" src="./public/github.png" width="100%">
 </p>
 
 ---
