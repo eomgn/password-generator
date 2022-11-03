@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-image: linear-gradient(-45deg, #3b06ff, #426b96);
+   height: 100vh;
+
+   color: #ffffff;
+
+   display: grid;
+   place-content: center;
+
+   font-family: 'JetBrains Mono', monospace;
+}
+
+.container {
+   max-width: 500px;
+
+   opacity: 0;
+   transform: translateY(-100px);
+   /* o forwards quer dizer que depois que executar o animation fique com a propriedade do @keyframe ou seja ao centro*/
+   animation: appear 0.9s forwards;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- title and password create ---*/
+
+.title h1::after {
+   content: '';
+   height: 5px;
+   width: 100%;
+   display: block;
+
+   background-image: linear-gradient(to right, #0080ff, #fff);
+
+   border-radius: 5px;
+}
+
+.title h1 {
+   text-transform: uppercase;
+
+   background-image: linear-gradient(to right, #0080ff, #fff);
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+}
+
+.password,
+.title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.password {
+   background-color: #71b7ff;
+   border-radius: 5px;
+}
+
+.password > input {
+   min-width: 100%;
+   height: 40px;
+
+   background-color: transparent;
+   outline: none;
+   border: none;
+
+   color: #fff;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+::placeholder {
+   font-size: 20px;
+   font-weight: 700;
+   color: #cccc;
+}
+
+.password > img {
+   width: 20px;
+   height: 20px;
+   margin-left: -35px;
+   cursor: pointer;
+}
+
+.password > img:active {
+   box-shadow: 0px 0px 15px #3b06ff;
+   transform: scale(105%);
+   border-radius: 20%;
+   background: transparent;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- options-box ---*/
+
+.options-box {
+   background-color: #71b7ff;
+   padding: 10px;
+   border-radius: 5px;
+}
+
+.size {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.size span:nth-child(2) {
+   font-size: 25px;
+   font-weight: 700;
+}
+
+.length input[type='range'] {
+   /*appearance reseta as propriedades de estilo iniciais */
+   appearance: none;
+   width: 100%;
+   height: 10px;
+   background-color: #3b06ff;
+   border-radius: 10px;
+   outline: none;
+   cursor: pointer;
+}
+
+.length input[type='range']::-webkit-slider-thumb {
+   appearance: none;
+   width: 5px;
+   height: 30px;
+   background-color: #fff;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- password-options ---*/
+
+.password-options {
+   display: flex;
+   flex-direction: column;
+   margin-top: 20px;
+   line-height: 30px;
+}
+
+.password-options label {
+   display: inline-flex;
+   align-items: center;
+}
+
+.password-options input[type='checkbox'] {
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
+   cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- force ---*/
+
+.force-box {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   width: 100%;
+   height: 40px;
+
+   padding: 20px;
+   margin-top: 20px;
+
+   background-color: #3b06ff;
+   border-radius: 5px;
+}
+
+.force-box span:nth-child(2) {
+   font-size: 25px;
+   font-weight: 700;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- generate ---*/
+
+button {
+   margin-top: 20px;
+   width: 100%;
+   height: 40px;
+
+   border: none;
+   border-radius: 5px;
+
+   outline: none;
+   cursor: pointer;
+
+   background-color: #fff;
+   color: #3b06ff;
+
+   font-size: 25px;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+button:hover {
+   background-color: #3b06ff;
+   color: #fff;
+}
+
+button:active {
+   box-shadow: 0px 0px 15px #3b06ff;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- observation ---*/
+
+.observation ul {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+
+   list-style: none;
+   font-size: 12px;
+
+   margin-top: 5px;
+}
+
+.observation ul li > span {
+   font-size: 18px;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- footer ---*/
+
+footer {
+   text-align: center;
+}
+
+.developer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.developer img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   margin-right: 20px;
+   border: 2px solid #fff;
+}
+
+.developer a:nth-child(1):hover {
+   transform: scale(120%);
+}
+
+.developer a:nth-child(2) {
+   color: #fff;
+   text-decoration: none;
+   margin-left: 10px;
+}
+
+.developer a:nth-child(2):hover {
+   text-decoration: underline;
+   transform: scale(103%);
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--- keyframe ---*/
+
+@keyframes appear {
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}

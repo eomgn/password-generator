@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+   <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="./public/icon.png" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Senha Aleatória</title>
+   </head>
+   <body>
+      <div class="container">
+         <main>
+            <div class="box">
+               <div class="title">
+                  <h1>CRIAR SENHA ALEATÓRIA</h1>
+               </div>
+               <div class="password">
+                  <input
+                     type="text"
+                     placeholder="P@4!srxD"
+                     id="length-password"
+                  />
+                  <img src="./public/icon-copy.svg" alt="Copiar" id="copy" />
+               </div>
+
+               <div class="options-box">
+                  <div class="size">
+                     <span> Comprimento de Caracteres </span>
+                     <span id="Range"> 4 </span>
+                  </div>
+                  <div class="length">
+                     <input
+                        type="range"
+                        name="password-length"
+                        id="inputRange"
+                        value="0"
+                        min="4"
+                        max="20"
+                     />
+                  </div>
+                  <div class="password-options">
+                     <label>
+                        <input
+                           type="checkbox"
+                           name="checkedInput"
+                           id="include-uppercase"
+                        />
+                        Incluir letras maiúsculas
+                     </label>
+
+                     <label>
+                        <input
+                           type="checkbox"
+                           name="checkedInput"
+                           id="include-lowercase"
+                        />
+                        Incluir letras minúsculas
+                     </label>
+
+                     <label>
+                        <input
+                           type="checkbox"
+                           name="checkedInput"
+                           id="include-numbers"
+                        />
+                        Incluir números
+                     </label>
+
+                     <label>
+                        <input
+                           type="checkbox"
+                           name="checkedInput"
+                           id="include-symbols"
+                        />
+                        Incluir símbolos
+                     </label>
+                  </div>
+
+                  <div class="force-box">
+                     <span> Força: </span>
+                     <span id="generated-force"></span>
+                  </div>
+
+                  <button id="generate">Criar senha</button>
+               </div>
+
+               <div class="observation">
+                  <ul>
+                     <li>
+                        <span>►</span> O mínimo é 4 caracteres e o máximo é 20;
+                     </li>
+                     <li><span>►</span> Marque uma ou mais opções;</li>
+                     <li>
+                        <span>►</span> Há a opção de copiar clicando no icone;
+                     </li>
+                     <li><span>►</span> Atente-se a força da senha.</li>
+                  </ul>
+               </div>
+            </div>
+         </main>
+
+         <footer>
+            <div class="developer">
+               <a href="https://www.linkedin.com/in/eomgn/" target="_blank">
+                  <img
+                     src="https://avatars.githubusercontent.com/u/83884728?v=4"
+                     alt="Foto de Matheus Gabriel Nogueira - Desenvolvedor"
+               /></a>
+               Criado por
+               <a href="https://www.linkedin.com/in/eomgn/" target="_blank"
+                  >Matheus Gabriel Nogueira</a
+               >
+            </div>
+         </footer>
+      </div>
+      <!-- JAVASCRIPT - MAIN -->
+
+      <script type="module" src="./src/main.js"></script>
+   </body>
+</html>

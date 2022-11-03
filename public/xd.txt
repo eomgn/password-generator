@@ -1,0 +1,127 @@
+AQUI É UMA OUTRA MANEIRA A QUAL FOI FEITO PORÉM COM UM PEQUENO BUG AONDE O RANDOM EM ALGUNS MOMENTOS NÃO INSERIA UM DO CHECKED
+
+
+/*--------------------------------------------------- */
+
+//          variables with queryselector - START
+
+const inputRange = document.querySelector('#inputRange')
+const range = document.querySelector('#Range')
+const lenghtPassword = document.querySelector('#length-password')
+
+const includeUppercase = document.querySelector('#include-uppercase')
+const includeLowercase = document.querySelector('#include-lowercase')
+const includeNumbers = document.querySelector('#include-numbers')
+const includeSymbols = document.querySelector('#include-symbols')
+
+//          variables with queryselector - END
+
+/*--------------------------------------------------- */
+
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const symbols = ['!', '@', '#', '$', '%', '+', '-', '/', '?', '=']
+
+const characters = Array.from(Array(26)).map((_, i) => i + 97)
+const lowercasecharacters = characters.map(item => String.fromCharCode(item))
+const uppercasecharacters = lowercasecharacters.map(item => item.toUpperCase())
+
+range.innerHTML = inputRange.value
+
+inputRange.addEventListener('change', () => {
+   range.innerHTML = inputRange.value
+
+   
+})
+
+/*--------------------------------------------------- */
+
+//          event click whit conditional for force - START
+
+   // event click 
+let checked = document.querySelector('#botao')
+checked.addEventListener('click', () => {
+
+   // function verify input checked
+   generatePassword(
+      includeUppercase.checked,
+      includeLowercase.checked,
+      includeNumbers.checked,
+      includeSymbols.checked,
+      inputRange.value
+   )
+
+   // conditional for force
+   const generatedForce = document.querySelector('#generated-force')
+
+   if (
+      includeUppercase.checked || includeLowercase.checked
+   ){
+      generatedForce.innerHTML = 'Fraca'
+   } if (includeUppercase.checked && includeNumbers.checked ||
+      includeLowercase.checked && includeNumbers.checked){
+         generatedForce.innerHTML = 'Média'
+   }if (includeUppercase.checked && includeNumbers.checked && includeSymbols.checked ||
+      includeLowercase.checked && includeNumbers.checked && includeSymbols.checked){
+         generatedForce.innerHTML = 'Forte'
+   } if (includeUppercase.checked && includeNumbers.checked && includeSymbols.checked && inputRange.value > 8||
+      includeLowercase.checked && includeNumbers.checked && includeSymbols.checked && inputRange.value > 8){
+         generatedForce.innerHTML = 'Muito forte'
+   }
+
+
+   // password created at success
+
+   if(lenghtPassword.value != 0){
+
+   let createdSucess = document.querySelector('.createdSucess span')
+
+   createdSucess.innerHTML = "Senha gerada!!! ✅"
+}
+   
+})
+
+//          event click whit conditional for force - END
+
+/*--------------------------------------------------- */
+
+const generatePassword = (
+   hasUppercase,
+   hasLowercase,
+   hasNumbers,
+   hasSymbols,
+   lenght
+) => {
+   const newArray = [
+      ...(hasNumbers ? numbers : []),
+      ...(hasSymbols ? symbols : []),
+      ...(hasLowercase ? lowercasecharacters : []),
+      ...(hasUppercase ? uppercasecharacters : [])
+   ]
+
+   if (newArray.length === 0) return
+
+   let password = ''
+
+   for (let i = 0; i < lenght; i++) {
+      const randomIndex = Math.floor(Math.random() * newArray.length)
+      password += newArray[randomIndex]
+   }
+
+   lenghtPassword.value = password
+}
+
+/*--------------------------------------------------- */
+
+//          copy by image - START
+
+let copy = document.querySelector('#copy')
+copy.addEventListener('click',() => {
+   let copyPassword = document.querySelector('#length-password')
+
+   
+   if(navigator.clipboard.writeText(copyPassword.value)) {
+      alert("Senha copiada!!! xD")
+   }
+})
+
+//          copy by image - END

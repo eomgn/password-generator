@@ -1,0 +1,89 @@
+@import 'base.css';
+
+@media (min-width: 375px) and (max-width: 470px) {
+   .title h1 {
+      min-width: 100%;
+
+      text-align: center;
+      font-size: 25px;
+   }
+
+   .password > input {
+      font-size: 18px;
+   }
+
+   .password-options {
+      font-size: 14px;
+   }
+
+   .password-options input[type='checkbox'] {
+      width: 17px;
+      height: 17px;
+   }
+
+   .size span:nth-child(1) {
+      font-size: 15px;
+   }
+
+   .size span:nth-child(2) {
+      font-size: 30px;
+   }
+
+   footer .developer {
+      flex-direction: column;
+   }
+
+   .developer img {
+      margin: 0;
+   }
+
+   .developer a {
+      margin: 0;
+   }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+   .title h1 {
+      min-width: 100%;
+
+      text-align: center;
+      font-size: 21.4px;
+   }
+
+   .password > input {
+      font-size: 17px;
+   }
+
+   .password-options {
+      font-size: 13px;
+   }
+
+   .password-options input[type='checkbox'] {
+      width: 17px;
+      height: 17px;
+   }
+
+   .size span:nth-child(1) {
+      font-size: 15px;
+   }
+
+   .size span:nth-child(2) {
+      font-size: 25px;
+   }
+
+   footer .developer {
+      flex-direction: column;
+   }
+
+   .developer img {
+      margin: 0;
+   }
+
+   .developer a {
+      margin: 0;
+   }
+
+   .observation ul {
+      font-size: 10px;
+   }
+}
